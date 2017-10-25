@@ -16,10 +16,7 @@ contract Authentication is Killable {
     // If yes, return user.
     // If no, throw.
 
-    if (users[msg.sender].name == 0x0)
-    {
-        throw;
-    }
+    require(users[msg.sender].name == 0x0);
 
     return (users[msg.sender].name);
   }
